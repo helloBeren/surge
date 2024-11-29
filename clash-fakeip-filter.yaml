@@ -75,6 +75,7 @@ payload:
 - heartbeat.belkin.com
 - localhost.ptlogin2.qq.com
 - ntp.ntsc.ac.cn
+- openpgpkey.kernel.org
 - pool.ntp.org
 - stun.l.google.com
 - xnotify.xboxlive.com
