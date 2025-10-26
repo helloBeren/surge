@@ -2,9 +2,9 @@
 #!desc=AD Reject
 
 [URL Rewrite]
-^https://adbehaviorhera\.ximalaya\.com/api/v1/adRealTime - reject
 ^https?:\/\/sdk1xyajs\.data\.kuiniuca\.com - reject
 ^https?:\/\/tower\.ubixioe\.com\/mob\/mediation - reject
+^https:\/\/adbehaviorhera\.ximalaya\.com/api/v1/adRealTime - reject
 ^https:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/(explorePage\/getAdverList|init\/startInit) - reject
 ^https:\/\/webapi\.qmai\.cn\/web\/cmk-center\/marketing\/canvas\/advert-reach - reject
 ^https:\/\/creditcardapp\.bankcomm\.com\/cnsvPmpaMdbcardWeb\/page\/getGuidePageAds - reject
