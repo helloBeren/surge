@@ -2,9 +2,12 @@
 #!desc=AD Reject
 
 [URL Rewrite]
+# > XimalayaADReject
+^https:\/\/adbehaviorhera\.ximalaya\.com/api/v1/adRealTime - reject
+^https?:\/\/.*\.xmcdn\.com\/\w{8}\/\w{4}-\w{16}\/.+gif$ _ reject
+# > OtherADReject
 ^https?:\/\/sdk1xyajs\.data\.kuiniuca\.com - reject
 ^https?:\/\/tower\.ubixioe\.com\/mob\/mediation - reject
-^https:\/\/adbehaviorhera\.ximalaya\.com/api/v1/adRealTime - reject
 ^https:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/(explorePage\/getAdverList|init\/startInit) - reject
 ^https:\/\/webapi\.qmai\.cn\/web\/cmk-center\/marketing\/canvas\/advert-reach - reject
 ^https:\/\/creditcardapp\.bankcomm\.com\/cnsvPmpaMdbcardWeb\/page\/getGuidePageAds - reject
@@ -39,6 +42,11 @@
 
 [Script]
 广告联盟json = type=http-response,pattern=^https:\/\/((api-access\.pangolin-sdk-toutiao?|is\.snssdk)\.com\/api\/ad\/union\/sdk\/get_ads|open\.e\.kuaishou\.com\/rest\/e\/v3\/open\/univ$|mi\.gdt\.qq\.com\/gdt_mview\.fcg\?),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/adsense.js,binary-body-mode=0,script-update-interval=0
+ximalaya_json1=type=http-response,pattern=^https?:\/\/.*\.xima.*\.com\/mobile-user\/v\d\/homePage,requires-body=1,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/ximalaya_json.js
+ximalaya_json2=type=http-response,pattern=^https?:\/\/.*\.xima.*\.com\/focus-mobile\/focusPic,requires-body=1,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/ximalaya_json.js
+ximalaya_json3=type=http-response,pattern=^https?:\/\/.*\.xima.*\.com\/discovery-feed\/v\d\/mix,requires-body=1,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/ximalaya_json.js
+ximalaya_json4=type=http-response,pattern=^https?:\/\/.*\.xima.*\.com\/discovery-category\/v\d/category,requires-body=1,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/ximalaya_json.js
+ximalaya_json5=type=http-response,pattern=^https?:\/\/.*\.xima.*\.com\/discovery-category\/customCategories,requires-body=1,script-path=https://raw.githubusercontent.com/ddgksf2013/Scripts/refs/heads/master/ximalaya_json.js
 
 [MITM]
 hostname = %APPEND% *.beacon.qq.com, *.e.qq.com, *.gdt.qq.com, *.l.qq.com, *.map.qq.com, *.mdt.qq.com, *.music.qq.com, *.reader.qq.com, *.tencentmusic.com,*.trace.qq.com, *.weixin.qq.com, *.wxs.qq.com,3gimg.qq.com, api.gameplus.qq.com,bgw.xinyue.qq.com,djcapp.game.qq.com,i.weread.qq.com,iphone.ac.qq.com,news.ssp.qq.com,qt.qq.com,r.inews.qq.com,ssl.kohsocialapp.qq.com,stat.y.qq.com, stat6.y.qq.com, tmead.y.qq.com, tmeadbak.y.qq.com, tmeadquic.y.qq.com, vv.video.qq.com,weixin110.qq.com,*.ximalaya.com, *.xmcdn.*,*.doubleclick.net,*.google-analytics.com, *.googlesyndication.com, *.googletagmanager.com, *.googletagservices.com,*dsp-x.jd.com, api.m.jd.com, api.smart.jd.com, in.m.jd.com,jdread-api.jd.com,lop-proxy.jd.com, ms.jr.jd.com,union.click.jd.com,api-access.pangolin-sdk-toutiao*.com,*.snssdk.com,*.1rtb.net,*.anythinktech.com,a.applovin.com,a.sfansclub.com,a.wkanx.com,aag.enmonster.com,activity.yonghuivip.com,agent-count.pconline.com.cn,ajax.loli.net,api.catch.gift,api.psy-1.com,api.qbb6.com,api.qiuduoduo.cn,gg.caixin.com,ma-adx.ctrip.com,qadx.qinlinad.com,ads.ishansong.com, ad.xiaotucc.com, ad.maoyan.com,ad.12306.cn, ad.cyapi.cn, ad.lofter.com, ad.mcloud.139.com, ad.seeyouyima.com, adapi.izuiyou.com, adm.10jqka.com.cn, adpai.thepaper.cn, adproxy.autohome.com.cn, ads.closeli.cn, advertise.bczeducation.cn, adx.zuoyebang.com,toblog.ctobsnssdk.com,*.sm.cn,*.sinaimg.cn,*.api.weibo.*,*.biz.weibo.com, *.im.weibo.cn,*.uve.weibo.com, ad*.sina.com,ad*.sina.com.cn,ad.cj.sina.cn,api.weibo.*, mapi.weibo.*,new.vip.weibo.cn,sax*.sina.com.cn,tqt.weibo.cn,apapia-sqk.manmanbuy.com, apapia-sqk-weblogic.manmanbuy.com,act.vip.iqiyi.com,api.cupid.iqiyi.com,dynamicad.kfc.com.cn,res.kfc.com.cn,api-ad-product.huxiu.com,api.one-wscn.awtmt.com,api.wfdata.club,app.ap.d3yuiw4.com,api.21ec74.com,api.369cx.cn, api.00bang.cn,api.qjjfin.com, app.flymodem.com.cn,apps.workair.cn,api.tipsoon.com,*.kakamobi.cn,*.qyfxgd.cn, *.tipatipa.xyz,*.ubixioe.com,*.xbwpys.com, *.qyfxgd.cn, dsp.toutiao.com,ggic.cmvideo.cn, ggic2.cmvideo.cn,cdn.cmgadx.com,dspsdk.abreader.com,ctrl.playcvn.*, ctrl.zmzapi.*,rtbapi.douyucdn.cn,m-adphone.wenhua.com.cn,starplucker.cyapi.cn, wrapper.cyapi.cn,vidz.3hxq.cn, vip7.fzwdyy.cn, tk.lanjiyin.com, zone.guiderank-app.com
