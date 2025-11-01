@@ -3,8 +3,11 @@
 
 [URL Rewrite]
 # > XimalayaADReject
-^https:\/\/adbehaviorhera\.ximalaya\.com/api/v1/adRealTime - reject
+^https?:\/\/adbehaviorhera\.ximalaya\.com/api/v1/adRealTime - reject
 ^https?:\/\/.*\.xmcdn\.com\/\w{8}\/\w{4}-\w{16}\/.+gif$ _ reject
+^https?:\/\/(adse\.wsa|adse|adbehavior|xdcs-collector)\.xima.*\.com\/.* - reject
+^https?:\/\/.*\.xima.*\.com\/api\/v\d\/adRealTime - reject
+^https?:\/\/.*\.xima.*\.com\/ting\/(loading|feed|home)? - reject
 # > OtherADReject
 ^https?:\/\/sdk1xyajs\.data\.kuiniuca\.com - reject
 ^https?:\/\/tower\.ubixioe\.com\/mob\/mediation - reject
