@@ -1,9 +1,6 @@
 #!name=AD Reject
 #!desc=AD Reject
 
-[Rule]
-DOMAIN-SUFFIX,ad.12306.cn,REJECT
-
 [URL Rewrite]
 # > XimalayaADReject
 ^https?:\/\/adbehaviorhera\.ximalaya\.com/api/v1/adRealTime - reject
